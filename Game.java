@@ -4,19 +4,25 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-
+/**
+ * A text-based adventure game with multiple rooms, combat, and player progression.
+ * 
+ * @author Niko Madden
+ */
 public class Game {
-
+ /**
+ * Initializes the game window, sets up the initial game state, and creates the game map.
+ * Configures the main window, title panel, and start button panel.
+ */    
     JFrame window;
     Container con;
     JPanel titleNamePanel, startButtonPanel, mainTextPanel, playerPanel, partyButtonPanel, partyTextPanel, classPanel, mapPanel;
-	JLabel coinsLabelNumber, coinsLabel;
+    JLabel coinsLabelNumber, coinsLabel;
     static JPanel choiceButtonPanel;
     JLabel titleName, hpLabel;
     static JLabel hpLabelNumber;
@@ -24,12 +30,12 @@ public class Game {
     Font titleFont = new Font("Times New Roman", Font.PLAIN, 40);
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
     JButton startButton;
-	static JButton choice1;
-	static JButton choice2;
-	static JButton choice3;
-	JButton barbarian;
-	JButton wizard;
-	JButton samurai;
+    static JButton choice1;
+    static JButton choice2;
+    static JButton choice3;
+    JButton barbarian;
+    JButton wizard;
+    JButton samurai;
     public static JTextArea mainTextArea;
     JTextArea partyTextArea;
     int coins;
@@ -91,8 +97,7 @@ public class Game {
         map[4][2] = new CombatRoom(3);
         map[4][3] = new SafeRoom("This is the last safe room you will go through before you meet the final boss.\n", "This will be your last chance to buy items or upgrade before you end the game.");
         map[4][4] = new CombatRoom("As you enter there is a loud laugh in the distance\n", "The torches in the room all of a sudden light up and your face to face with the devil himself",4);    
-        }
-    // Note: When first starting I was learning how to set up JSwing stuff so the title screen stuff is set up a little funny
+    }
     // set up title panel
     private void setupTitlePanel() {
         titleNamePanel = new JPanel();
